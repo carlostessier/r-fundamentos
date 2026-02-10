@@ -73,6 +73,28 @@ entregas/<apellidos_nombre>/Notebook_0X.ipynb
 
 ---
 
+## 🆘 Solución de Problemas: VS Code se queda cargando
+
+Si al intentar abrir el proyecto en un **Dev Container**, Visual Studio Code se queda "atascado" en la pantalla de *Starting Dev Container...* o *Building image...* durante mucho tiempo, sigue estos pasos para construir la imagen manualmente desde la terminal:
+
+1. Abre una terminal (PowerShell, CMD o Bash) en la **carpeta raíz** del proyecto.
+2. Ejecuta el siguiente comando para construir la imagen usando el Dockerfile de la carpeta `.devcontainer`:
+
+```bash
+docker build -t r-curso -f .devcontainer/Dockerfile .
+
+```
+
+> **Nota:** Asegúrate de incluir el punto `.` al final del comando.
+
+3. Una vez que el proceso termine con éxito (`SUCCESS`), vuelve a Visual Studio Code.
+4. Presiona `F1` (o `Ctrl` + `Shift` + `P`) y selecciona:
+**Dev Containers: Rebuild and Reopen in Container**.
+
+Al haber construido la imagen manualmente, VS Code la detectará inmediatamente y arrancará sin esperas.
+
+---
+
 ## 📤 Procedimiento de entrega (Pull Request)
 
 Las entregas se realizan **exclusivamente mediante Pull Request**.
