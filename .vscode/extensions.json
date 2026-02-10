@@ -1,0 +1,12 @@
+{
+  "name": "R Machine Learning Environment",
+  "extensions": [
+    "REditorSupport.r",
+    "ms-toolsai.jupyter",
+    "ms-azuretools.vscode-docker"
+  ],
+  "settings": {
+    "r.plot.view": "http",
+    "r.sessionWatcher": true
+  }
+}

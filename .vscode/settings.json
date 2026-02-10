@@ -1,0 +1,9 @@
+{
+  "jupyter.askForKernelRestart": false,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "r.bracketedPaste": true,
+  "r.rterm.linux": "/usr/bin/R",
+  "notebook.output.textLineLimit": 1000,
+  "jupyter.interactiveWindow.creationMode": "perFile"
+}
