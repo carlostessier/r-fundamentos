@@ -48,8 +48,7 @@ RUN install2.r --error \
     caret \
     psych \
     GGally \
-    httppgd \
     && R -e "IRkernel::installspec(user = FALSE)"
 
 # Verificación
-RUN R --version && jupyter kernelspec list
+RUN R

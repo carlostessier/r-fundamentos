@@ -1,0 +1,11 @@
+services:
+  jupyter:
+    image: quay.io/jupyter/r-notebook:latest
+    container_name: jupyter_r
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_TOKEN=easy_password_123
+    volumes:
+      - ./work:/home/jovyan/work
+    restart: always
