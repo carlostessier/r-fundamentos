@@ -95,93 +95,94 @@ Al haber construido la imagen manualmente, VS Code la detectará inmediatamente 
 
 ---
 
-## 📤 Procedimiento de entrega (Pull Request)
+## ⚙️ Configuración Inicial (Solo la primera vez)
 
-Las entregas se realizan **exclusivamente mediante Pull Request**.
+Antes de empezar el curso, debes preparar tu entorno en GitHub y en tu ordenador.
 
-### Pasos resumidos
+### 1. Hacer un Fork del repositorio
 
-Perfecto 👍 Te lo integro dentro del procedimiento completo, adaptado al flujo que quieres que sigan los alumnos.
+Ve a la esquina superior derecha de esta página y haz clic en el botón **Fork**.
 
----
+* Esto creará una **copia exacta** de este repositorio en **tu cuenta de GitHub**.
 
-# 📌 Procedimiento para entregar una práctica mediante Pull Request
+### 2. Clonar TU repositorio (el Fork)
 
-
-# 🔧 Procedimiento completo con comandos
-
-## 1️⃣ Clonar el repositorio
+En tu ordenador, clona la copia que acabas de crear (no la del profesor):
 
 ```bash
-git clone https://github.com/carlostessier/r-fundamentos.git
-cd repositorio
+# ⚠️ Sustituye <TU_USUARIO> por tu nombre de usuario de GitHub
+git clone https://github.com/<TU_USUARIO>/r-fundamentos.git
+
+cd r-fundamentos
+
+```
+
+### 3. Crear tu carpeta de entregas
+
+Crea una carpeta con tus apellidos y nombre dentro de `entregas/`:
+
+```bash
+# Ejemplo: mkdir entregas/perez_juan
+mkdir entregas/<apellidos_nombre>
+
 ```
 
 ---
 
-## 2️⃣ Crear una nueva rama para la entrega
+## 🔄 Flujo de trabajo para cada Actividad
 
-⚠️ No trabajar directamente en `main`.
+Cada vez que tengas que realizar una nueva práctica (ej. Notebook 02, 03...), sigue estos pasos ordenados:
+
+### Paso 1: Sincronizar tu Fork (Obtener nuevos enunciados)
+
+El profesor subirá nuevos notebooks a la carpeta `actividades/`. Para tenerlos en tu repositorio:
+
+1. Ve a la página de **tu repositorio (Fork)** en GitHub.
+2. Haz clic en el botón **Sync Fork** (debajo del botón verde de "Code").
+3. Dale a **Update branch**.
+4. En tu terminal local, descarga esos cambios:
+```bash
+git pull origin main
+
+```
+
+
+
+### Paso 2: Trabajar en la actividad
+
+1. Copia el fichero de `actividades/Notebook_XX.ipynb` a tu carpeta `entregas/<apellidos_nombre>/`.
+2. Resuelve los ejercicios en tu copia.
+3. **Comprobación:** Antes de guardar, reinicia el kernel y limpia las salidas (*Restart & Clear Outputs*).
+
+### Paso 3: Subir los cambios a tu nube (Push)
 
 ```bash
-git checkout -b entrega/apellidos_nombre
+# 1. Añade los cambios
+git add entregas/<apellidos_nombre>/
+
+# 2. Guarda el cambio con un mensaje claro
+git commit -m "Entrega Notebook XX - Apellidos Nombre"
+
+# 3. Sube los cambios a TU repositorio en GitHub
+git push origin main
+
 ```
+
+### Paso 4: Entregar al profesor (Pull Request)
+
+Una vez tus cambios están en tu GitHub:
+
+1. Ve a la pestaña **Pull Requests** en tu repositorio.
+2. Haz clic en **New Pull Request**.
+3. Verás una comparación. Asegúrate de que la flecha apunta así:
+* `base repository: carlostessier/r-fundamentos` ⬅️ `head repository: <tu_usuario>/r-fundamentos`
+
+
+4. Haz clic en **Create Pull Request**.
+5. En el título pon: `Entrega Notebook XX - <Tus Apellidos Nombre>`.
 
 ---
 
-## 3️⃣ Crear la carpeta de entrega
-
-```bash
-mkdir -p entregas/apellidos_nombre
-```
-
-Coloca dentro:
-
-* `Notebook_01.ipynb` (o el que corresponda)
-* Imágenes
-* Datasets necesarios
-* Cualquier archivo adicional requerido
-
----
-
-## 4️⃣ Añadir los archivos al control de versiones
-
-```bash
-git add entregas/apellidos_nombre/
-```
-
----
-
-## 5️⃣ Hacer commit
-
-```bash
-git commit -m "Entrega Notebook 01 - Apellidos Nombre"
-```
-
----
-
-## 6️⃣ Subir la rama al repositorio remoto
-
-```bash
-git push -u origin entrega/apellidos_nombre
-```
-
----
-
-## 7️⃣ Crear el Pull Request
-
-Desde la web del repositorio (GitHub/GitLab), crear un PR:
-
-* **Base:** `main`
-* **Compare:** `entrega/apellidos_nombre`
-
-O si usas GitHub CLI:
-
-```bash
-gh pr create --base main --head entrega/apellidos_nombre --fill
-```
-
----
 
 # 🎯 Buenas prácticas
 
