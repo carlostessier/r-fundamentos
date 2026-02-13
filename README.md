@@ -193,9 +193,6 @@ Una vez tus cambios están en tu GitHub:
 
 ---
 
-Si quieres, puedo prepararte una versión lista para copiar y pegar en el README del repositorio para los alumnos.
-
-
 ### Reglas de entrega
 
 - ✅ Una carpeta por alumno: `entregas/<usuario_github>/`
